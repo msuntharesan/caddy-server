@@ -31,3 +31,8 @@ $ docker run -d \
     -v ./Caddyfile:/etc/Caddyfile vanthiyathevan/caddy-server \
     -v ./.caddy:/root/.caddy
 ```
+
+
+## Inspired by
+
+> https://github.com/ZZROTDesign/alpine-caddy
