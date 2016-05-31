@@ -17,7 +17,7 @@ RUN apk add --no-cache tini git \
 
 COPY ./Caddyfile /etc/Caddyfile
 
-VOLUME ["/var/www/html"]
+VOLUME ["/var/www/html", "/root/.caddy"]
 
 ENTRYPOINT ["/sbin/tini", "--"]
 
