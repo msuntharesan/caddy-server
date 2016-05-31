@@ -1,5 +1,5 @@
 FROM alpine:edge
-MAINTAINER Suntharesan Mohan <mohan.kethees@vermeercanada.com>
+MAINTAINER Suntharesan Mohan <mohan.kethees@gmail.com>
 
 ENV CADDY_VERSION=v0.8.3
 
