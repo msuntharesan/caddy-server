@@ -8,7 +8,8 @@ Using default Caddyfile
 ```
 $ docker run -d \
     -p 80:80 \
-    -v ./public:/var/www/html vanthiyathevan/caddy-server
+    -v ./public:/var/www/html \
+    vanthiyathevan/caddy-server
 ```
 
 To use with your own Caddyfile
@@ -16,8 +17,9 @@ To use with your own Caddyfile
 ```
 $ docker run -d \
     -p 80:80 \
-    -v ./public:/var/www/html vanthiyathevan/caddy-server \
-    -v ./Caddyfile:/etc/Caddyfile vanthiyathevan/caddy-server
+    -v ./public:/var/www/html \
+    -v ./Caddyfile:/etc/Caddyfile \
+    vanthiyathevan/caddy-server
 ```
 
 
@@ -27,9 +29,10 @@ With [tls](https://caddyserver.com/docs/tls) directive, you can tell caddy to ge
 $ docker run -d \
     -p 80:80 \
     -p 443:443 \
-    -v ./public:/var/www/html vanthiyathevan/caddy-server \
-    -v ./Caddyfile:/etc/Caddyfile vanthiyathevan/caddy-server \
-    -v ./.caddy:/root/.caddy
+    -v ./public:/var/www/html \
+    -v ./Caddyfile:/etc/Caddyfile \
+    -v ./.caddy:/root/.caddy \
+    vanthiyathevan/caddy-server
 ```
 
 
