@@ -3,7 +3,7 @@ MAINTAINER Suntharesan Mohan <mohan.kethees@gmail.com>
 
 ENV CADDY_VERSION=v0.8.3
 
-RUN apk add --no-cache tini git \
+RUN apk add --no-cache tini git ca-certificates \
     && apk add --no-cache --virtual .build_tools wget tar bash \
     && wget -qO- https://getcaddy.com \
       | bash -s cors,git,hugo,ipfilter,jsonp,jwt,mailout,prometheus,realip,search,upload \
