@@ -1,0 +1,9 @@
+version: "2"
+services:
+  caddygh:
+    build:
+      context: .
+      args:
+         PLUGINS: "git,hugo"
+  caddyall:
+    build: .
