@@ -4,7 +4,7 @@ MAINTAINER Suntharesan Mohan <mohan.kethees@gmail.com>
 ENV CADDY_VERSION=v0.9.5
 
 RUN apk --update upgrade \
-    apk --no-cache add tini git ca-certificates \
+    && apk --no-cache add tini git ca-certificates \
     && apk add --no-cache --virtual .build_tools wget tar bash \
     && wget -qO- https://getcaddy.com \
       | bash -s realip,git,locale,minify,ipfilter,search,jwt,filemanager,hugo,mailout,prometheus \
