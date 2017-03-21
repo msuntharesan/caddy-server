@@ -1,7 +1,7 @@
 FROM alpine:edge
 MAINTAINER Suntharesan Mohan <mohan.kethees@gmail.com>
 
-ENV CADDY_VERSION=v0.9.3
+ENV CADDY_VERSION=v0.9.5
 
 RUN apk add --no-cache tini git \
     && apk add --no-cache --virtual .build_tools wget tar bash \
