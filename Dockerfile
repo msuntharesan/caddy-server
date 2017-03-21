@@ -10,7 +10,6 @@ RUN apk --update upgrade \
       | bash -s realip,git,locale,minify,ipfilter,search,jwt,filemanager,hugo,mailout,prometheus \
     && apk del --purge .build_tools \
     && rm -rf \
-      /etc/ssl \
       /usr/share/doc \
       /usr/share/man \
       /tmp/* \
