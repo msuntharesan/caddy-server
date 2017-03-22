@@ -1,14 +1,16 @@
 FROM alpine:edge
 MAINTAINER Suntharesan Mohan <mohan.kethees@gmail.com>
 
-ENV CADDY_VERSION=v0.9.5
+ENV CADDY_VERSION=v0.9.5 \
+    CADDYPATH=/.caddy
 
 RUN apk --update upgrade \
-    && apk --no-cache add tini git ca-certificates \
-    && apk add --no-cache --virtual .build_tools wget tar bash \
+    && apk add --no-cache --no-progress tini ca-certificates \
+    && apk add --no-cache --no-progress --virtual .build_tools wget tar bash \
     && wget -qO- https://getcaddy.com \
-      | bash -s realip,git,locale,minify,ipfilter,search,jwt,filemanager,hugo,mailout,prometheus \
+      | bash -s cors,expires,locale,prometheus,ratelimit,realip \
     && apk del --purge .build_tools \
+    && mkdir /.caddy \
     && rm -rf \
       /usr/share/doc \
       /usr/share/man \
@@ -17,7 +19,7 @@ RUN apk --update upgrade \
 
 COPY ./Caddyfile /etc/Caddyfile
 
-VOLUME ["/var/www/html", "/root/.caddy"]
+VOLUME ["/var/www/html", "/.caddy"]
 EXPOSE 80 443 2015
 
 ENTRYPOINT ["/sbin/tini", "--"]
